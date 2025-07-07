@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Music DL</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fa-solid fa-music" aria-hidden="true"></i>
+                <span>Free Music DL</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="download-section">
+            <h1>Download Free MP3 / MP4 Music</h1>
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="music-url" 
+                    placeholder="Paste a URL to download music..." 
+                    aria-label="Music URL input"
+                />
+            </div>
+            <div class="buttons">
+                <button onclick="downloadMusic('mp3')" aria-label="Download MP3">Download MP3</button>
+                <button onclick="downloadMusic('mp4')" aria-label="Download MP4">Download MP4</button>
+                
+            </div>
+            <div id="progress-bar" class="hidden"></div>
+            <p id="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+            Only download content you have rights to. This site respects copyright law.
+        </p>
+        <p>
+            <i class="fa-solid fa-copyright" aria-hidden="true"></i>
+            2023 Luis Marte. All rights reserved.
+        </p>
+        <p>
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+            Made with <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask</a> and <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener noreferrer">YouTube DL (yt-dlp)</a>
+        </p>
+        <p>
+            <i class="fa-solid fa-link" aria-hidden="true"></i>
+            
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
