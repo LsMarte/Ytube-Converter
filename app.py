@@ -57,3 +57,24 @@ def download():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    from flask import after_this_request
+
+...
+
+@app.route("/download", methods=["GET"])
+def download():
+    ...
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+        file_path = os.path.join(DOWNLOAD_DIR, f"{file_id}.{ext}")
+
+        @after_this_request
+        def remove_file(response):
+            try:
+                os.remove(file_path)
+            except Exception as e:
+                print(f"Error deleting file: {e}")
+            return response
+
+        return send_file(file_path, as_attachment=True)
