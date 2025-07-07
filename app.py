@@ -75,7 +75,7 @@ def download():
                 os.remove(file_path)
             except Exception as e:
 
-                CORS(app, resources={r"/download": {"origins": "https://yourdomain.com"}})
+                CORS(app, resources={r"/download": {"origins": "https://lsmarte.github.io/Ytube-Converter/"}})
                 print(f"Error deleting file: {e}")
             return response
 
