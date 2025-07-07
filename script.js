@@ -32,3 +32,12 @@ document.getElementById('music-url').addEventListener('input', () => {
         status.textContent = "";
     }
 });
+status.textContent = "Processing download...";
+document.getElementById('spinner').classList.remove("hidden");
+
+anchor.click();
+
+setTimeout(() => {
+  document.getElementById('spinner').classList.add("hidden");
+  status.textContent = "Download started.";
+}, 2000);
