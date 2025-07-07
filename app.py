@@ -74,6 +74,8 @@ def download():
             try:
                 os.remove(file_path)
             except Exception as e:
+
+                CORS(app, resources={r"/download": {"origins": "https://yourdomain.com"}})
                 print(f"Error deleting file: {e}")
             return response
 
